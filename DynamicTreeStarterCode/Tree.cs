@@ -45,7 +45,20 @@ namespace DynamicTreeStarterCode
 		private void Insert(int data, TreeNode node)
 		{
 			// *** Fill in this method ****************************************
-			
+			if(data < node.Data)
+			{
+				if(node.Left == null)
+					node.Left = new TreeNode(data);
+				else
+					Insert(data, node.Left);
+			}
+			else if(data > node.Data)
+			{
+				if(node.Right == null)
+					node.Right = new TreeNode(data);
+				else
+					Insert(data, node.Right);
+			}
 		}
 	}
 }

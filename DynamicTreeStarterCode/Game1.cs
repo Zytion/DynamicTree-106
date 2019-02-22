@@ -19,6 +19,8 @@ namespace DynamicTreeStarterCode
 		Tree treeGreen;
 		Tree treeBlue;
 
+		Random random = new Random();
+
 		public Game1()
 		{
 			graphics = new GraphicsDeviceManager(this);
@@ -53,8 +55,14 @@ namespace DynamicTreeStarterCode
 			treeBlue = new Tree(spriteBatch, Color.DodgerBlue);
 
 			// *** FILL EACH TREE WITH DATA HERE ***************************
-			
+			for(int i = 0; i < 1000; i++)
+				treeRed.Insert(random.Next(200));
 
+			for(int i = 1; i < 100; i++)
+				treeGreen.Insert(i);
+
+			for(int i = 1; i < 200; i++)
+				treeBlue.Insert(i + 200 * random.Next(20));
 		}
 
 		/// <summary>
