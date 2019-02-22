@@ -28,9 +28,13 @@ namespace DynamicTreeStarterCode
 		/// <param name="data">The data to insert</param>
 		public void Insert(int data)
 		{
-			// *** Fill in this method ****************************************
-			
 
+
+			// *** Fill in this method ****************************************
+			if (root == null)
+				root = new TreeNode(data);
+			else
+				Insert(data, root);
 		}
 
 		/// <summary>
